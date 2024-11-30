@@ -4,116 +4,46 @@
   <link rel="stylesheet" type="text/css" href="STYLE.CSS">
 </head>
 <body>
-  
- <h3>ESCOLHA A COR DA CRUZ<h3>
-<!-- -------------------------------------------------- 
-SLIDERS
--->
- <div class="flex">
-   <form action=update class="formulario" id="fundo">
-        <p class="overflow">Vermelho: <span id="Rvermelho"></span></p>
-        <input type="range" min="0" max="100" name="vermelho" id="vermelho" value="100"    class="slider">
- 
-        <p class="overflow">Verde: <span id="Rverde"></span></p>
-        <input type="range" min="0" max="100" name="verde" id="verde" value="100" class="slider"> 
+  <div class="background_grid">
+        <!-- -------------------------------------------------- 
+        HEADER
+        -->
+      <section class="header">
+        <div>
+          <h3>ESCOLHA A COR DA CRUZ</h3>
+        </div>
+      </section>
+
+      <section class="main">
+        <!-- -------------------------------------------------- 
+        SLIDERS
+        -->
+        <div>
+          <form action=update class="formulario" id="fundo">
+            <p class="overflow">Vermelho: <span id="Rvermelho"></span></p>
+            <input type="range" min="0" max="100" name="vermelho" id="vermelho" value="100"    class="slider">
      
-        <p class="overflow">Azul: <span id="Razul"></span></p>
-        <input type="range" min="0" max="100" name="azul" id="azul" value="100" class="slider">  
-   </form> 
-
-   <!-- -------------------------------------------------- 
-     CORES RÁDIOS
-    -->
-   <form action=update class="formulario flex" id="fundo_botoes">
-    <div class="custom-radios">
-        <div>
-          <div>
-            <div>
-              <input type="radio" id="color-1" name="color" value="color-1">
-              <label for="color-1">
-                <span>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-                </span>
-              </label>
-            </div>
-            
-            <div>
-              <input type="radio" id="color-2" name="color" value="color-2">
-              <label for="color-2">
-                <span>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-                </span>
-              </label>
-            </div>
-          </div>
-          
-          <div>
-            <div>
-              <input type="radio" id="color-3" name="color" value="color-3">
-              <label for="color-3">
-                <span>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-                </span>
-              </label>
-            </div>
-          
-            <div>
-              <input type="radio" id="color-4" name="color" value="color-4">
-              <label for="color-4">
-                <span>
-                  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-                </span>
-              </label>
-            </div>
-          </div>
+            <p class="overflow">Verde: <span id="Rverde"></span></p>
+            <input type="range" min="0" max="100" name="verde" id="verde" value="100" class="slider"> 
+         
+            <p class="overflow">Azul: <span id="Razul"></span></p>
+            <input type="range" min="0" max="100" name="azul" id="azul" value="100" class="slider">  
+          </form> 
         </div>
 
-        <div>
-          <div>
-            <div>
-                <input type="radio" id="color-5" name="color" value="color-5">
-                <label for="color-5">
-                  <span>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-                  </span>
-                </label>
-            </div>
-
-            <div>
-                <input type="radio" id="color-6" name="color" value="color-6">
-                <label for="color-6">
-                  <span>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-                  </span>
-                </label>
-            </div>
-          </div>
-
-          <div>
-            <div>
-                <input type="radio" id="color-7" name="color" value="color-7">
-                <label for="color-7">
-                  <span>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-                  </span>
-                </label>
-            </div>
-
-            <div>
-                <input type="radio" id="color-8" name="color" value="color-8">
-                <label for="color-8">
-                  <span>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg" alt="Checked Icon" />
-                  </span>
-                </label>
-            </div>
-          </div>
+        <!-- -------------------------------------------------- 
+        RADIO
+        -->
+        <div class="custom-radios formulario" >
+          <form action=update id="fundo_botoes_js">
+          </form>
         </div>
+      </section>
 
-      </div>
-    </form> 
+      <section class="footer">
+        <h1>RODAPÉ</h1>
+      </section>
   </div>
-
    
 <!-- -------------------------------------------------- 
 COLOR WHELL

@@ -12,6 +12,45 @@
   var outputazul = document.getElementById("Razul");
   outputazul.innerHTML = sliderazul.value;
 
+  const levels= [0,127,255];
+  const div_radios = document.getElementById("fundo_botoes_js");
+
+  levels.forEach(red => {
+    levels.forEach(green => {
+      levels.forEach(blue => {
+        let color = `rgb(${red}, ${green}, ${blue})`;
+        if(red == 255 && blue == 255 && green == 255)color = `rgb(230,230,230)`;
+        // Criar input de tipo rádio
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "color27";
+        radio.value = color;
+        radio.id = color;
+        //radio.style.backgroundColor = "";
+        //radio.addEventListener("change", () => updateColorPreview(color));
+        radio.style.backgroundColor = color;
+
+        // Criar o label para o botão
+        const label = document.createElement("label");
+        label.htmlFor = color;
+        //label.textContent = color;
+        //label.style.backgroundColor = color;
+
+        const span = document.createElement("span");
+        const img = document.createElement("img");
+        img.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg";
+        img.alt = "selecionado";
+        span.appendChild(img);
+        span.style.backgroundColor = color;
+        label.appendChild(span);
+
+          // Adicionar os elementos ao container
+        div_radios.appendChild(radio);
+        div_radios.appendChild(label);
+        });
+      });
+    });
+
   slidervermelho.oninput = function() {
     outputvermelho.innerHTML = this.value;
     const cor_atual = document.getElementById('cor-nova');
@@ -168,6 +207,7 @@
     }
 
   const radios = document.querySelectorAll('input[name="color"]');
+  const radios27 = document.querySelectorAll('input[name="color27"]');
   
   function displayMessage() {
     const selectedOption = document.querySelector('input[name="color"]:checked').value;
@@ -203,7 +243,11 @@
 
   radios.forEach(radio => {
             radio.addEventListener('change', displayMessage);
-  });   
+  }); 
+  
+  radios27.forEach(radio => {
+    radio.addEventListener('change', displayMessage);
+}); 
   
   function dechecked(){
     radios.forEach(radio => {
