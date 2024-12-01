@@ -12,18 +12,21 @@
   var outputazul = document.getElementById("Razul");
   outputazul.innerHTML = sliderazul.value;
 
-  const levels= [0,127,255];
-  const div_radios = document.getElementById("fundo_botoes_js");
+  const levels= [127,255, 0];
+  const div_radios = document.getElementById("fundo_botoes");
+
+  const div_grid_unit = document.createElement("div");
 
   levels.forEach(red => {
     levels.forEach(green => {
       levels.forEach(blue => {
         let color = `rgb(${red}, ${green}, ${blue})`;
-        if(red == 255 && blue == 255 && green == 255)color = `rgb(230,230,230)`;
+        if(red == 255 && blue == 255 && green == 255)return; //color = `rgb(230,230,230)`;
+        if(red == 0 && blue == 0 && green == 0)return; //color = `rgb(230,230,230)`;
         // Criar input de tipo rádio
         const radio = document.createElement("input");
         radio.type = "radio";
-        radio.name = "color27";
+        radio.name = "color";
         radio.value = color;
         radio.id = color;
         //radio.style.backgroundColor = "";
@@ -45,8 +48,9 @@
         label.appendChild(span);
 
           // Adicionar os elementos ao container
-        div_radios.appendChild(radio);
-        div_radios.appendChild(label);
+        div_grid_unit.appendChild(radio);
+        div_grid_unit.appendChild(label);
+        div_radios.appendChild(div_grid_unit);
         });
       });
     });
@@ -207,7 +211,6 @@
     }
 
   const radios = document.querySelectorAll('input[name="color"]');
-  const radios27 = document.querySelectorAll('input[name="color27"]');
   
   function displayMessage() {
     const selectedOption = document.querySelector('input[name="color"]:checked').value;
@@ -244,10 +247,6 @@
   radios.forEach(radio => {
             radio.addEventListener('change', displayMessage);
   }); 
-  
-  radios27.forEach(radio => {
-    radio.addEventListener('change', displayMessage);
-}); 
   
   function dechecked(){
     radios.forEach(radio => {

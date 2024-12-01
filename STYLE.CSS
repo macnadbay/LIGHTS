@@ -7,7 +7,6 @@
     --color-6: #e426da;
     --color-7: #eeeeee;
     --color-8: #000000;
-    
 }
 
 html{
@@ -61,6 +60,13 @@ body {
   width: auto;
 }
 
+.radio_form{
+  display: grid;
+  grid-template-columns: 5fr 2fr; 
+  gap: 10px;
+  justify-items: center;
+}
+
 .slider{
     width:100%;
     color: rgb(189, 122, 35);
@@ -78,9 +84,12 @@ body {
 }
 .custom-radios {
   div {
-    display: inline-block;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    justify-content: center;
   }
-
+  
   input[type="radio"] {
     display: none;
 
@@ -88,12 +97,10 @@ body {
       color: #333;
       font-family: Arial, sans-serif;
       font-size: 14px;
-
       span {
         display: table-cell;
         width: 40px;
         height: 40px;
-        margin: -1px 4px 0 0;
         vertical-align: middle;
         cursor: pointer;
         border-radius: 50%;
@@ -115,6 +122,12 @@ body {
       opacity: 1;
     }
   }
+}
+
+.cores{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
 }
 
 .form-color{
