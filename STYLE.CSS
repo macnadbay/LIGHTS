@@ -14,7 +14,7 @@ html{
   width: 100%;
   margin: 0;
   padding: 0px;
-  background-color: #ffffff;
+  background-color: #999999;
 }
 
 body {
@@ -34,8 +34,7 @@ body {
   'header'
   'main'
   'footer';
-  gap: 10px;
-  
+  gap: 10px;  
 }
 
 .header{
@@ -52,6 +51,11 @@ body {
     overflow: hidden;
 }
 
+.slider{
+  width:100%;
+  color: rgb(189, 122, 35);
+}
+
 .formulario{
   margin: 5px;
   padding: 10px;
@@ -65,29 +69,33 @@ body {
   grid-template-columns: 5fr 2fr; 
   gap: 10px;
   justify-items: center;
+  border: 1px solid red;
 }
 
-.slider{
-    width:100%;
-    color: rgb(189, 122, 35);
-  }
+.fundo_comando{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  border: 1px solid red;
+}
   
-  span, p{
+span, p{
     color: white;
     text-align: left;
-  }
+}
 
 .flex{
     display: flex;
     justify-content: center;
     align-items: center;   
 }
+
 .custom-radios {
   div {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     justify-content: center;
+    border: 1px solid red;
   }
   
   input[type="radio"] {
@@ -131,7 +139,7 @@ body {
 }
 
 .form-color{
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: center;
   /*grid-template-columns: 1fr 1fr;

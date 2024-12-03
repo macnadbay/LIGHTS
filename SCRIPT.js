@@ -12,9 +12,22 @@
   var outputazul = document.getElementById("Razul");
   outputazul.innerHTML = sliderazul.value;
 
+  function handleRadioClick(event) {
+    let rgb = event.target.value;
+    const regex = /^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/;
+    // Executa a regex na string fornecida
+    const resultado = rgb.match(regex);
+    const r = parseInt(resultado[1]);
+    const g = parseInt(resultado[2]);
+    const b = parseInt(resultado[3]);
+    slidervermelho.value = 100*r/255;
+    sliderverde.value = 100*g/255;
+    sliderazul.value = 100*b/255;
+    console.log(`Você selecionou: ${r},${g},${b}`);
+  }
+
   const levels= [127,255, 0];
   const div_radios = document.getElementById("fundo_botoes");
-
   const div_grid_unit = document.createElement("div");
 
   levels.forEach(red => {
@@ -32,6 +45,7 @@
         //radio.style.backgroundColor = "";
         //radio.addEventListener("change", () => updateColorPreview(color));
         radio.style.backgroundColor = color;
+        radio.addEventListener('click', handleRadioClick);
 
         // Criar o label para o botão
         const label = document.createElement("label");
