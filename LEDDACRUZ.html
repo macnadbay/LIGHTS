@@ -40,9 +40,43 @@
 
             </div>
           <div class="fundo_comando" id="fundo_comando">
-            <div><H3>botao desliga</H3></div>
-            <div><H3>botao atualiza</H3></div>
-            <div><p class="cor-nova" id="cor-nova">Nova cor<p></p></div>
+            
+            <div class="flex">
+              <button class="botao" id="desligar_cruz">
+                Desligar
+              </button> 
+            </div>
+            
+            <div class="flex">
+              <button class="botao" id="ligar_cruz">
+                Ligar
+              </button> 
+            </div>
+            
+            <div class="flex">
+              <input type="checkbox" id="real_time">
+              <label for="real_time">Envio automático</label>
+            </div>
+
+            <div class="div_cor_nova">
+              
+              <div class="div_cor_nova_container">
+                <div class="secao-superior">
+                  <h5>Nova</h5>
+                </div>
+                <div class="secao-inferior" id="cor-nova">
+                </div>
+              </div>
+
+              <div class="div_cor_nova_container">
+                <div class="secao-superior">
+                  <h5>Atual</h5>
+                </div>
+                <div class="secao-inferior" id="cor-atual">
+                </div>
+              </div>
+
+            </div>
           </div>
         </form>
       

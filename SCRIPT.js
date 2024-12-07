@@ -1,16 +1,26 @@
+const slidervermelho = document.getElementById("vermelho");
+const outputvermelho = document.getElementById("Rvermelho");
+outputvermelho.innerHTML = slidervermelho.value;
 
-  var slidervermelho = document.getElementById("vermelho");
-  var outputvermelho = document.getElementById("Rvermelho");
-  outputvermelho.innerHTML = slidervermelho.value;
-  var mudarfundo = document.getElementById("fundo");
+const sliderverde = document.getElementById("verde");
+const outputverde = document.getElementById("Rverde");
+outputverde.innerHTML = sliderverde.value;
 
-  var sliderverde = document.getElementById("verde");
-  var outputverde = document.getElementById("Rverde");
-  outputverde.innerHTML = sliderverde.value;
+const sliderazul = document.getElementById("azul");
+const outputazul = document.getElementById("Razul");
+outputazul.innerHTML = sliderazul.value;
 
-  var sliderazul = document.getElementById("azul");
-  var outputazul = document.getElementById("Razul");
-  outputazul.innerHTML = sliderazul.value;
+const cor_nova = document.getElementById('cor-nova');
+const cor_atual = document.getElementById('cor-atual');
+
+const checkbox = document.getElementById('real_time');
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      console.log('Checkbox marcado!');
+    } else {
+      console.log('Checkbox desmarcado!');
+    }
+});
 
   function handleRadioClick(event) {
     let rgb = event.target.value;
@@ -21,12 +31,16 @@
     const g = parseInt(resultado[2]);
     const b = parseInt(resultado[3]);
     slidervermelho.value = 100*r/255;
+    outputvermelho.textContent = Math.round(100*r/255);
     sliderverde.value = 100*g/255;
+    outputverde.textContent = Math.round(100*g/255);
     sliderazul.value = 100*b/255;
+    outputazul.textContent = Math.round(100*b/255);
     console.log(`Você selecionou: ${r},${g},${b}`);
+    cor = `rgb(${red}, ${green}, ${blue})`;
   }
 
-  const levels= [127,255, 0];
+  const levels= [255,127,0];
   const div_radios = document.getElementById("fundo_botoes");
   const div_grid_unit = document.createElement("div");
 
@@ -54,9 +68,11 @@
         //label.style.backgroundColor = color;
 
         const span = document.createElement("span");
+        span.style.aspectRatio = "1/1";
         const img = document.createElement("img");
         img.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg";
         img.alt = "selecionado";
+        
         span.appendChild(img);
         span.style.backgroundColor = color;
         label.appendChild(span);
@@ -71,12 +87,11 @@
 
   slidervermelho.oninput = function() {
     outputvermelho.innerHTML = this.value;
-    const cor_atual = document.getElementById('cor-nova');
-    cor_atual.style.backgroundColor = `rgb(${this.value*2.55}, ${sliderverde.value*2.55}, ${sliderazul.value*2.55})`;
+    //if(checkbox.checked)cor_atual.style.backgroundColor = `rgb(${this.value*2.55}, ${sliderverde.value*2.55}, ${sliderazul.value*2.55})`;
     dechecked();
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "vermelho_update?vermelho="+this.value, false);
-    xhttp.send();  
+    //var xhttp = new XMLHttpRequest();
+    //xhttp.open("GET", "vermelho_update?vermelho="+this.value, false);
+    //xhttp.send();  
   }
 
   sliderverde.oninput = function() {
@@ -267,4 +282,14 @@
         radio.checked = false
     })
   };
+
+  function muda_cor_nova(){
+
+  }
+
+  function atualiza_cor(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "vermelho_update?vermelho="+this.value, false);
+    xhttp.send(); 
+  }
   
