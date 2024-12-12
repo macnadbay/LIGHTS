@@ -24,8 +24,7 @@ body {
   background-color: #999999;
   color: #FFFFFF;
   margin: 0px;
-  padding: 10PX;
-  min-width: 300px;
+  padding: 5px;
 }
 
 .backgroudn_grid{
@@ -122,6 +121,8 @@ span, p{
         aspect-ratio: 1/1;
 
         img {
+          height: 50%;
+          margin: auto;
           opacity: 0;
           transition: all .3s ease;
         }
