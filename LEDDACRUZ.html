@@ -3,117 +3,68 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="STYLE.CSS">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+  <link rel="stylesheet" type="text/css" href="STYLE.CSS">
+
 </head>
+
 <body>
-  <div class="background_grid">
-        <!-- -------------------------------------------------- 
-        HEADER
-        -->
-      <section class="header">
-        <div>
-          <h3>ESCOLHA A COR DA CRUZ</h3>
-        </div>
-      </section>
-
-      <section class="main">
-        <!-- -------------------------------------------------- 
-        SLIDERS
-        -->
-        <div class="cruz col-6">
-          <form action=update class="formulario" id="fundo">
-            <p class="overflow">Vermelho: <span id="Rvermelho"></span></p>
-            <input type="range" min="0" max="100" name="vermelho" id="vermelho" value="100"    class="slider">
-     
-            <p class="overflow">Verde: <span id="Rverde"></span></p>
-            <input type="range" min="0" max="100" name="verde" id="verde" value="100" class="slider"> 
-         
-            <p class="overflow">Azul: <span id="Razul"></span></p>
-            <input type="range" min="0" max="100" name="azul" id="azul" value="100" class="slider">  
-          </form> 
-        </div>
-
-        <!-- -------------------------------------------------- 
-        RADIO
-        -->
-        <form action=update class="formulario radio_form col-6" >
-            <div class="custom-radios" id="fundo_botoes">
-
-            </div>
-          <div class="fundo_comando" id="fundo_comando">
-            
-            <div class="flex">
-              <button class="botao" id="desligar_cruz">
-                Desligar
-              </button> 
-            </div>
-            
-            <div class="flex">
-              <button class="botao" id="ligar_cruz">
-                Ligar
-              </button> 
-            </div>
-            
-            <div class="flex">
-              <input type="checkbox" id="real_time">
-              <label for="real_time">Envio automático</label>
-            </div>
-
-            <div class="div_cor_nova">
-              
-              <div class="div_cor_nova_container">
-                <div class="secao-superior">
-                  <h5>Nova</h5>
-                </div>
-                <div class="secao-inferior" id="cor-nova">
-                </div>
-              </div>
-
-              <div class="div_cor_nova_container">
-                <div class="secao-superior">
-                  <h5>Atual</h5>
-                </div>
-                <div class="secao-inferior" id="cor-atual">
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </form>
-      
-      </section>
-
-      <section class="footer">
-        <h1>RODAPÉ</h1>
-      </section>
-  </div>
-   
-<!-- -------------------------------------------------- 
-COLOR WHELL
--->
-    <form action=update class="formulario form-color" id="fundo_botoes">
-      <div class="div-color-whell">
-        <div class="color-wheel" id="colorWheel"></div>
+  <div class="container-fluid">
+    <div class="row mb-3">
+      <!-- HEADER -->
+      <div class="col-12 header">
+        <h3>ESCOLHA A COR DA CRUZ</h3>
       </div>
-      <div class="div-botoes-cores">
-        <div> 
-          <button class="botao-aplicar" id="botao-aplicar">APLICAR</button>
+    </div>
+
+    <div class="row mb-3 g-1">
+      <!-- SLIDERS -->
+      <div class="col-12 col-md-6">
+        <div class="div_sliders">
+          <div>
+            <p class="overflow">Vermelho: <span id="Rvermelho"></span></p>
+            <input type="range" class="slider" min="0" max="100" name="vermelho" id="vermelho" value="100"/>
+          </div>
+
+          <div>
+            <p class="overflow">Verde: <span id="Rverde"></span></p>
+            <input type="range" class="slider" min="0" max="100" name="verde" id="verde" value="100"/> 
+          </div>
+          
+          <div>
+            <p class="overflow">Azul: <span id="Razul"></span></p>
+            <input type="range" class="slider" min="0" max="100" name="azul" id="azul" value="100"/>  
+          </div>
         </div>
-        <div>
-          <p class="cor-atual"   id="cor-atual">Cor atual<p>
-        </div>
-        <div>
-          <p class="cor-nova" id="cor-nova">Nova cor<p>
-        </div>
-      </div>        
-    </form>    
-<!-- -------------------------------------------------- 
-JAVA SCRIPT
--->
-<script src="SCRIPT.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      </div>
+
+      <!-- RADIO -->
+      <div class="col-12 col-sm-6 col-md-4">
+        <div class="div_radios">
+          <div class="custom-radios" id="fundo_botoes">
+          </div>
+        </div>        
+      </div>
+
+      <!-- BOTOES -->
+      <div class="col col-md div_botoes">
+        <button class="BUTTON">ENVIAR</button>
+      </div>  
+
+    </div>
+
+    <!-- RODAPÉ -->
+    <div class="row">
+      <div class="col-12 footer">
+        <h1>RODAPÉ</h1>
+      </div>     
+    </div>
+  
+  </div>
+
+  <!-- JAVA SCRIPT -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="SCRIPT.js"></script>
 
 </body>
 </html>
