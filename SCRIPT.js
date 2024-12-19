@@ -139,7 +139,7 @@ const radios = document.querySelectorAll('input[name="color"]');
   
 function displayMessage() {
   const selectedOption = document.querySelector('input[name="color"]:checked').value;
-  const colorWheel = document.getElementById('cor-nova');
+  //const colorWheel = document.getElementById('cor-nova');
   console.log(selectedOption);
   switch(selectedOption){
     case("color-1"):
@@ -175,7 +175,7 @@ radios.forEach(radio => {
   
 function dechecked(){
   radios.forEach(radio => {
-      radio.checked = false
+      radio.checked = false;
   })
 };
 
@@ -183,9 +183,14 @@ function muda_cor_nova(){
   red = Math.round(slidervermelho.value*2.55);
   green = Math.round(sliderverde.value*2.55);
   blue = Math.round(sliderazul.value*2.55);
+  if(red == 230 && green == 230 && blue == 230){
+    red = 255;
+    green = 255;
+    blue = 255;
+  }
   cor = `rgb(${red}, ${green}, ${blue})`;
   console.log(`cor = ${cor}`)
-  cor_nova.style.backgroundColor = cor;
+  //cor_nova.style.backgroundColor = cor;
 }
 
 function atualiza_cor(){

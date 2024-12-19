@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="STYLE.CSS">
+  <link rel="icon" href="data:,">
 
 </head>
 
@@ -39,7 +40,7 @@
       </div>
 
       <!-- RADIO -->
-      <div class="col-12 col-sm-6 col-md-4">
+      <div class="col-12 col-sm-6 col-md-4 col-xl-3">
         <div class="div_radios">
           <div class="custom-radios" id="fundo_botoes">
           </div>
@@ -47,8 +48,24 @@
       </div>
 
       <!-- BOTOES -->
-      <div class="col col-md div_botoes">
-        <button class="BUTTON">ENVIAR</button>
+      <div class="col col-md-2 col-xl">
+        <div class="div_cmd">
+            <div class="container">
+              <div class="row">
+              <div class="col-5 div_slider_v">
+                <!-- <label for="slider_v">Intensidade</label>-->
+                <input type="range" id="slider_v" min="0" max="100" value="50">
+              </div>
+              <div class="col-4 div_botoes">
+                <button>Ligar</button>
+                <button>Desligar</button>
+                <label>
+                  <input type="checkbox" id="real_time" name="real_time"> Envio automático
+                </label>
+              </div>
+            </div>
+            </div>     
+        </div>
       </div>  
 
     </div>
