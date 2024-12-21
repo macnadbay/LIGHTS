@@ -12,6 +12,14 @@ const sliderazul = document.getElementById("azul");
 const outputazul = document.getElementById("Razul");
 outputazul.innerHTML = sliderazul.value;
 
+const sliderIntensidade = document.getElementById("slider_v");
+const outputIntensidade = document.getElementById("label_slider_v");
+outputIntensidade.innerHTML = sliderIntensidade.value;
+
+sliderIntensidade.oninput = function(){
+  outputIntensidade.innerHTML = sliderIntensidade.value;
+}
+
 const cor_nova = document.getElementById('cor-nova');
 const cor_atual = document.getElementById('cor-atual');
 let cor;

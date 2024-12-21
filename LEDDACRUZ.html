@@ -52,18 +52,23 @@
         <div class="div_cmd">
             <div class="container">
               <div class="row">
-              <div class="col-5 div_slider_v">
-                <!-- <label for="slider_v">Intensidade</label>-->
-                <input type="range" id="slider_v" min="0" max="100" value="50">
+                <div class="col-6">
+                  <div class="div_slider_v">
+                  <input class="slider_v" type="range" id="slider_v" min="0" max="100" value="100">
+                    <!--<label for="slider_v" id="label_slider_v">Intensidade: </label> -->
+                  </div>
+                </div>
+                <div class="col-6 div_botoes">
+                  <button>Ligar</button>
+                  <button>Desligar</button>
+                  <label>
+                    <input type="checkbox" id="real_time" name="real_time"> Envio automático
+                  </label>
+                </div>
+                <div class="col-12">
+                  <p class="overflow">Luz: <span id="label_slider_v"></span><span>%</span></p>
+                </div>
               </div>
-              <div class="col-4 div_botoes">
-                <button>Ligar</button>
-                <button>Desligar</button>
-                <label>
-                  <input type="checkbox" id="real_time" name="real_time"> Envio automático
-                </label>
-              </div>
-            </div>
             </div>     
         </div>
       </div>  

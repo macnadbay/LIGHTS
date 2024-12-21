@@ -101,7 +101,7 @@ span, p{
   flex-direction: column;
   justify-content: space-evenly; 
   text-align: center;
-  padding: 15px;
+  padding: 10px;
   border: 1px solid orange;
 }
 
@@ -113,16 +113,24 @@ span, p{
 
 .div_slider_v{
   border: solid 1px purple;
+  /*rotate: 90deg;*/
+  margin: 0px;
+  padding: 0px;
+}
 
+.slider_v{
+  writing-mode: vertical-lr;
+  direction: rtl;
+  height: 200px;
 }
 
 .div_botoes{
   border: solid 1px red;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
   margin: auto;
+  height: 100%;
 }
 
 button{
