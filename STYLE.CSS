@@ -97,39 +97,34 @@ span, p{
   background-color: #334257;
   border-radius: 20px;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly; 
-  text-align: center;
-  padding: 10px;
-  border: 1px solid orange;
 }
 
-.div_cmd_superior{
-  background-color: #334257;
-  border-radius: 20px;
-  /*border: solid 2px green;*/
+.center{
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.h100{
+  height: 100%;
+}
+
+.border{
+  border: 2px solid black;
 }
 
 .div_slider_v{
   border: solid 1px purple;
-  /*rotate: 90deg;*/
-  margin: 0px;
-  padding: 0px;
+   /*rotate: 90deg;*/
 }
 
 .slider_v{
   writing-mode: vertical-lr;
   direction: rtl;
-  height: 200px;
 }
 
 .div_botoes{
   border: solid 1px red;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto;
   height: 100%;
 }
 
@@ -142,66 +137,18 @@ label{
   color: white;
 }
 
-.vertical-range {
-  -webkit-appearance: none; /* Remove estilo padrão em navegadores WebKit */
-  writing-mode: bt-lr; /* Altera a orientação do thumb */
-  width: 8px; /* Largura da barra */
-  height: 200px; /* Altura da barra */
+@media (max-width: 767px) {
+  .bg-responsive {
+    background-color: green; /* Verde para md */
+  }
 }
 
-/* Estilo da barra (track) */
-.vertical-range::-webkit-slider-runnable-track {
-  width: 8px;
-  height: 100%;
-  background: #ddd;
-  border-radius: 4px;
-}
-.vertical-range::-moz-range-track {
-  width: 8px;
-  height: 100%;
-  background: #ddd;
-  border-radius: 4px;
-}
-.vertical-range::-ms-track {
-  width: 8px;
-  height: 100%;
-  background: #ddd;
-  border-radius: 4px;
-  border: none; /* Remove bordas extras no IE */
-}
+@media (min-width: 768px) {
+  .bg-responsive {
+    background-color: orange; /* Azul para lg */
+  }
 
-/* Estilo do thumb (botão deslizante) */
-.vertical-range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  background: #007BFF;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-top: -6px; /* Ajusta alinhamento */
-}
-.vertical-range::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  background: #007BFF;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.vertical-range::-ms-thumb {
-  width: 20px;
-  height: 20px;
-  background: #007BFF;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-/* Foco no thumb */
-.vertical-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 5px #007BFF;
-}
-.vertical-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 5px #007BFF;
-}
-.vertical-range:focus::-ms-thumb {
-  box-shadow: 0 0 5px #007BFF;
-}
+@media (min-width: 992px) {
+  .bg-responsive {
+    background-color: red; /* Azul para lg */
+  }

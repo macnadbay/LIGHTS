@@ -9,7 +9,7 @@
 
 </head>
 
-<body>
+<body class="bg-responsive">
   <div class="container-fluid">
     <div class="row mb-3">
       <!-- HEADER -->
@@ -20,27 +20,34 @@
 
     <div class="row mb-3 g-1">
       <!-- SLIDERS -->
-      <div class="col-12 col-md-6">
-        <div class="div_sliders">
-          <div>
-            <p class="overflow">Vermelho: <span id="Rvermelho"></span></p>
-            <input type="range" class="slider" min="0" max="100" name="vermelho" id="vermelho" value="100"/>
+      <div class="col-sm-12 col-md-6 h100 div_sliders">
+        <div class="row ">
+          <div class="col-10">
+            <div>
+              <p class="overflow">Vermelho: <span id="Rvermelho"></span></p>
+              <input type="range" class="slider" min="0" max="100" name="vermelho" id="vermelho" value="100"/>
+            </div>
+
+            <div>
+              <p class="overflow">Verde: <span id="Rverde"></span></p>
+              <input type="range" class="slider" min="0" max="100" name="verde" id="verde" value="100"/> 
+            </div>
+            
+            <div>
+              <p class="overflow">Azul: <span id="Razul"></span></p>
+              <input type="range" class="slider" min="0" max="100" name="azul" id="azul" value="100"/>  
+            </div>   
           </div>
 
-          <div>
-            <p class="overflow">Verde: <span id="Rverde"></span></p>
-            <input type="range" class="slider" min="0" max="100" name="verde" id="verde" value="100"/> 
-          </div>
-          
-          <div>
-            <p class="overflow">Azul: <span id="Razul"></span></p>
-            <input type="range" class="slider" min="0" max="100" name="azul" id="azul" value="100"/>  
+          <div class="col-2 div_slider_v center">
+            <input class="slider_v" type="range" id="slider_v" min="0" max="100" value="100">
+            <label for="slider_v" id="label_slider_v">Intensidade: </label>
           </div>
         </div>
       </div>
 
       <!-- RADIO -->
-      <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+      <div class="col-xs-12 col-sm-7 col-md-4 col-lg-4 col-xl-3">
         <div class="div_radios">
           <div class="custom-radios" id="fundo_botoes">
           </div>
@@ -48,28 +55,34 @@
       </div>
 
       <!-- BOTOES -->
-      <div class="col col-md-2 col-xl">
-        <div class="div_cmd">
-            <div class="container">
-              <div class="row">
-                <div class="col-6">
-                  <div class="div_slider_v">
-                  <input class="slider_v" type="range" id="slider_v" min="0" max="100" value="100">
-                    <!--<label for="slider_v" id="label_slider_v">Intensidade: </label> -->
-                  </div>
-                </div>
-                <div class="col-6 div_botoes">
-                  <button>Ligar</button>
-                  <button>Desligar</button>
-                  <label>
-                    <input type="checkbox" id="real_time" name="real_time"> Envio automático
+      <div class="col-xs-12 col-sm-5 col-md-2 col-lg-2 col-xl-3">
+        <div class="container h100 div_cmd">
+          <div class="row h100 center">
+            <div class="col-12">
+              <div class="center m-2">
+                <button type="button" class="col btn btn-light btn-sm">On</button>
+              </div>
+              <div class="center m-2">
+                <button type="button" class="col btn btn-dark btn-sm">Desligar</button>
+              </div>  
+              <div class="center m-2">
+                <label>
+                  <input type="checkbox" id="real_time" name="real_time"> Envio automático
                   </label>
-                </div>
+              </div>
+            </div>              
+            <!--<div class="col center m-1">
+              <div class="div_slider_v center">
+                <input class="slider_v" type="range" id="slider_v" min="0" max="100" value="100">
+                <label for="slider_v" id="label_slider_v">Intensidade: </label>
+              </div>
+            </div>--> 
+          </div>
+              <!--<div class="row">
                 <div class="col-12">
                   <p class="overflow">Luz: <span id="label_slider_v"></span><span>%</span></p>
                 </div>
-              </div>
-            </div>     
+              </div>-->
         </div>
       </div>  
 
