@@ -20,10 +20,10 @@
 
     <div class="row mb-3 g-1">
       <!-- SLIDERS -->
-      <div class="col-sm-12 col-md-6 h100 div_sliders">
-        <div class="row ">
-          <div class="col-10">
-            <div>
+      <div class="col-sm-12 col-md-6 div_sliders">
+        <div class="row h100">
+          <div class="col-10 d-flex flex-column justify-content-evenly">
+            <div >
               <p class="overflow">Vermelho: <span id="Rvermelho"></span></p>
               <input type="range" class="slider" min="0" max="100" name="vermelho" id="vermelho" value="100"/>
             </div>
@@ -40,9 +40,16 @@
           </div>
 
           <div class="col-2 div_slider_v center">
-            <input class="slider_v" type="range" id="slider_v" min="0" max="100" value="100">
+            <div>
+              <div class="row">
+                <input class="slider_v" type="range" id="slider_v" min="0" max="100" value="100">
+              </div>              
             <label for="slider_v" id="label_slider_v">Intensidade: </label>
+            </div>
+            
           </div>
+          
+            
         </div>
       </div>
 
@@ -60,10 +67,13 @@
           <div class="row h100 center">
             <div class="col-12">
               <div class="center m-2">
-                <button type="button" class="col btn btn-light btn-sm">On</button>
+                <button type="button" class="col btn btn-light btn-sm" onclick="botao_on()">ON</button>
               </div>
               <div class="center m-2">
-                <button type="button" class="col btn btn-dark btn-sm">Desligar</button>
+                <button type="button" class="col btn btn-dark btn-sm" onclick="botao_off()">OFF</button>
+              </div> 
+              <div class="center m-2">
+                <button type="button" class="col btn btn-secondary btn-sm disabled" onclick="atualizar()" id="botao_atualizar">ATUALIZAR</button>
               </div>  
               <div class="center m-2">
                 <label>

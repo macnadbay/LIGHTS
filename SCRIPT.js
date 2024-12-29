@@ -1,38 +1,94 @@
 geraRadios();
 
+var intensidade;
+
 const slidervermelho = document.getElementById("vermelho");
 const outputvermelho = document.getElementById("Rvermelho");
-outputvermelho.innerHTML = slidervermelho.value;
+outputvermelho.innerHTML = slidervermelho.value+"%";
+vermelho = slidervermelho.value*2.55;
 
 const sliderverde = document.getElementById("verde");
 const outputverde = document.getElementById("Rverde");
-outputverde.innerHTML = sliderverde.value;
+outputverde.innerHTML = sliderverde.value+"%";
+verde = sliderverde.value*2.55;
 
 const sliderazul = document.getElementById("azul");
 const outputazul = document.getElementById("Razul");
-outputazul.innerHTML = sliderazul.value;
+outputazul.innerHTML = sliderazul.value+"%";
+azul = sliderazul.value*2.55;
 
 const sliderIntensidade = document.getElementById("slider_v");
 const outputIntensidade = document.getElementById("label_slider_v");
-outputIntensidade.innerHTML = sliderIntensidade.value;
+outputIntensidade.innerHTML = sliderIntensidade.value+"%";
+intensidade = sliderIntensidade.value;
 
 sliderIntensidade.oninput = function(){
-  outputIntensidade.innerHTML = sliderIntensidade.value;
+  outputIntensidade.innerHTML = sliderIntensidade.value+"%";
+  intensidade = sliderIntensidade.value;
+  muda_cor_nova();
 }
 
-const cor_nova = document.getElementById('cor-nova');
-const cor_atual = document.getElementById('cor-atual');
-let cor;
-let red, green, blue;
+slidervermelho.oninput = function() {
+  outputvermelho.innerHTML = this.value+"%";
+  //if(checkbox.checked)cor_atual.style.backgroundColor = `rgb(${this.value*2.55}, ${sliderverde.value*2.55}, ${sliderazul.value*2.55})`;
+  //vermelho = Math.round(2.55*this.value*intensidade/100);
+  dechecked();
+  muda_cor_nova();
+  //var xhttp = new XMLHttpRequest();
+  //xhttp.open("GET", "vermelho_update?vermelho="+this.value, false);
+  //xhttp.send();  
+}
+
+sliderverde.oninput = function() {
+  outputverde.innerHTML = this.value+"%";
+  //const cor_atual = document.getElementById('cor-nova');
+  //cor_atual.style.backgroundColor = `rgb(${slidervermelho.value*2.55}, ${this.value*2.55}, ${sliderazul.value*2.55})`;
+  //verde = Math.round(2.55*this.value*intensidade/100);
+  dechecked();
+  muda_cor_nova();
+  //var xhttp = new XMLHttpRequest();
+  //xhttp.open("GET", "verde_update?verde="+this.value, false);
+  //xhttp.send();
+}
+
+sliderazul.oninput = function() {
+  outputazul.innerHTML = this.value+"%";
+  //const cor_atual = document.getElementById('cor-nova ');
+  //cor_atual.style.backgroundColor = `rgb(${slidervermelho.value*2.55}, ${sliderverde.value*2.55}, ${this.value*2.55})`;
+  //azul = Math.round(2.55*this.value*intensidade/100);
+  dechecked();
+  muda_cor_nova();
+  //var xhttp = new XMLHttpRequest();
+  //xhttp.open("GET", "azul_update?azul="+this.value, false);
+  //xhttp.send();
+}
+
+//let cor;
+//let red, green, blue;
 
 const checkbox = document.getElementById('real_time');
+const botao_atualizar = document.getElementById('botao_atualizar');
+
 
 checkbox.checked = true;
 checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
       console.log('Checkbox marcado!');
+      botao_atualizar.classList.add("disabled");
+      botao_atualizar.setAttribute("aria-disabled","true");
+      botao_atualizar.disabled = true;
+      botao_atualizar.classList.add("btn-secondary");
+      botao_atualizar.classList.remove("bnt-primary")
+      
     } else {
       console.log('Checkbox desmarcado!');
+      botao_atualizar.classList.remove("disabled");
+      botao_atualizar.classList.remove("btn-secondary");
+      botao_atualizar.classList.add("btn-primary");
+      botao_atualizar.disabled = false;
+      botao_atualizar.removeAttribute("aria-disabled"); 
+
+
     }
 });
 
@@ -93,7 +149,8 @@ function geraRadios(){
 
         const span = document.createElement("span");
         const img = document.createElement("img");
-        img.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg";
+        //img.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg";
+        img.src = "check-icn.svg";
         img.alt = "selecionado";
         
         span.appendChild(img);
@@ -108,39 +165,6 @@ function geraRadios(){
         });
       });
     });
-}
-  
-
-slidervermelho.oninput = function() {
-  outputvermelho.innerHTML = this.value;
-  //if(checkbox.checked)cor_atual.style.backgroundColor = `rgb(${this.value*2.55}, ${sliderverde.value*2.55}, ${sliderazul.value*2.55})`;
-  dechecked();
-  muda_cor_nova();
-  //var xhttp = new XMLHttpRequest();
-  //xhttp.open("GET", "vermelho_update?vermelho="+this.value, false);
-  //xhttp.send();  
-}
-
-sliderverde.oninput = function() {
-  outputverde.innerHTML = this.value;
-  //const cor_atual = document.getElementById('cor-nova');
-  //cor_atual.style.backgroundColor = `rgb(${slidervermelho.value*2.55}, ${this.value*2.55}, ${sliderazul.value*2.55})`;
-  dechecked();
-  muda_cor_nova();
-  //var xhttp = new XMLHttpRequest();
-  //xhttp.open("GET", "verde_update?verde="+this.value, false);
-  //xhttp.send();
-}
-
-sliderazul.oninput = function() {
-  outputazul.innerHTML = this.value;
-  //const cor_atual = document.getElementById('cor-nova ');
-  //cor_atual.style.backgroundColor = `rgb(${slidervermelho.value*2.55}, ${sliderverde.value*2.55}, ${this.value*2.55})`;
-  dechecked();
-  muda_cor_nova();
-  //var xhttp = new XMLHttpRequest();
-  //xhttp.open("GET", "azul_update?azul="+this.value, false);
-  //xhttp.send();
 }
 
 const radios = document.querySelectorAll('input[name="color"]');
@@ -182,8 +206,28 @@ radios.forEach(radio => {
 }); 
   
 function dechecked(){
+  const regex = /rgb\((\d+),\s*(\d+),\s*(\d+)\)/;
+  let result; 
   radios.forEach(radio => {
       radio.checked = false;
+      cor = radio.value;
+      result = cor.match(regex);
+      red = parseInt(result[1]);
+      green = parseInt(result[2]);
+      blue = parseInt(result[3])
+      if(red == 230)red = 255;
+      if(green == 230)green = 255;
+      if(blue == 230)blue = 255;
+      red = Math.round(red/2.55);
+      green = Math.round(green/2.55);
+      blue = Math.round(blue/2.55);
+      if(slidervermelho.value == red && sliderverde.value == green && sliderazul.value == blue){ // && (sliderverde.value*2.55) == green && (sliderazul.value*2.55) == blue){
+        radio.checked = true;
+        console.log(`%cRadio.value = ${cor}`, "font-family: monospace");
+        console.log(`%cred = ${slidervermelho.value}, green = ${sliderverde.value}, blue = ${sliderazul.value}`, "font-family: monospace");
+      }       
+      //console.log(`%cred = ${red}, green = ${green}, blue = ${blue}`, "font-family: monospace");
+      
   })
 };
 
@@ -191,18 +235,46 @@ function muda_cor_nova(){
   red = Math.round(slidervermelho.value*2.55);
   green = Math.round(sliderverde.value*2.55);
   blue = Math.round(sliderazul.value*2.55);
-  if(red == 230 && green == 230 && blue == 230){
-    red = 255;
-    green = 255;
-    blue = 255;
-  }
+  //red=Math.round(red*intensidade/100);
+  //green=Math.round(green*intensidade/100);
+  //blue=Math.round(blue*intensidade/100);
   cor = `rgb(${red}, ${green}, ${blue})`;
-  console.log(`cor = ${cor}`)
+  //testar resposta dentro de curva logaritmia
+  //console.log(`%ccor = ${cor}`.padEnd(30) + `intensidade = ${intensidade}`, "font-family: monospace");
   //cor_nova.style.backgroundColor = cor;
+  if(checkbox.checked)atualizar();
 }
 
-function atualiza_cor(){
+function atualizar(){
   var xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "vermelho_update?vermelho="+this.value, false);
+  const params = new URLSearchParams;
+  params.append("vermelho",slidervermelho.value);
+  params.append("verde",sliderverde.value);
+  params.append("azul",sliderazul.value);
+  params.append("intensidade",sliderIntensidade.value);
+  //console.log(params);
+
+  const url = `update?${params}`;
+  xhttp.open("GET", url, true);
+  xhttp.onload = function() {
+    if (xhttp.status >= 200 && xhttp.status < 300) {
+      console.log("Resposta recebida:", xhttp.responseText);
+    } else {
+      console.error("Erro na requisição:", xhttp.status, xhttp.statusText);
+    }
+  };
   xhttp.send(); 
 }
+
+function botao_on(){
+  sliderIntensidade.value = intensidade;
+  outputIntensidade.innerHTML = intensidade;
+}
+
+function botao_off(){
+  sliderIntensidade.value = 0;
+  outputIntensidade.innerHTML = 0;
+}
+
+dechecked();
+console.log('Script INICIADO!');

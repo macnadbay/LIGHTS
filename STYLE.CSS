@@ -22,11 +22,8 @@ body{
 .div_sliders{
   background-color: #334257;
   border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
   padding: 10px;
+  /*border: solid 1px red;*/
 }
   
 span, p{
@@ -114,8 +111,9 @@ span, p{
 }
 
 .div_slider_v{
-  border: solid 1px purple;
+  /*border: solid 1px purple;
    /*rotate: 90deg;*/
+   border-left: solid 1px black;
 }
 
 .slider_v{
@@ -147,8 +145,10 @@ label{
   .bg-responsive {
     background-color: orange; /* Azul para lg */
   }
+}
 
 @media (min-width: 992px) {
   .bg-responsive {
     background-color: red; /* Azul para lg */
   }
+}
